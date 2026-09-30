@@ -23,7 +23,9 @@ How to Install and Run Hyper-V Launcher
 ---------------------------------------
 #### Download
 
-Installation packages are available to project collaborators.
+[Download the latest setup for Windows x64](https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe)
+
+[Download the MSI installer](https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.Installer.msi) · [View all releases](https://github.com/andrezammit/hypervlauncher-site/releases)
 
 #### Usage
 
