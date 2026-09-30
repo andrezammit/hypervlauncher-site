@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hypervlauncher.andrezammit.com/sitemap.xml
