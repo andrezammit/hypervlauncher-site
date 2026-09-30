@@ -24,6 +24,6 @@ The `releases/latest/download/` links automatically follow the latest release. K
 
 ## Local preview
 
-Serve this folder with any static HTTP server and open index.html. The custom page is in index.html, with styles.css and the original screenshots in Images/. The .nojekyll file disables theme processing.
+Serve this folder with any static HTTP server and open index.html. The landing page is in index.html and the illustrated usage guide is in guide.html, with styles.css and the original screenshots in Images/. The .nojekyll file disables theme processing.
 
 The previous Markdown page is retained as reference; index.html is the website entry point. Download links remain pointed at this repository's latest public release.

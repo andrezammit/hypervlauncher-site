@@ -1,34 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hyper-V Launcher — Your virtual machines, one click away</title>
-<meta name="description" content="Launch local Hyper-V virtual machines with desktop shortcuts, a system tray menu, and automatic shortcut management. Download for Windows x64.">
-<meta name="theme-color" content="#151b2e"><link rel="stylesheet" href="styles.css"><link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hyper-V Launcher — Your virtual machines, ready when you are</title>
+    <meta name="description" content="Launch local Hyper-V virtual machines from your desktop, Start Menu, or system tray. Download Hyper-V Launcher for Windows x64.">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="wrap"><a class="brand" href="./">Hyper-V Launcher</a><nav aria-label="Main navigation"><a href="#features">Features</a><a href="#guide">Getting started</a><a href="#download">Download</a></nav></header>
-<main id="main">
-<section class="hero wrap">
-<div><p class="eyebrow">BUILT FOR WINDOWS &amp; HYPER-V</p><h1>Your virtual machines.<br><span>One click away.</span></h1><p class="intro">Give your local Hyper-V machines a place on your desktop. Create shortcuts, launch from the system tray, and let Hyper-V Launcher take care of the details.</p><div class="actions"><a class="button" href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe">Download</a><a href="#guide">See how it works</a></div><p class="note">Windows x64 · Hyper-V required</p></div>
-<figure><img src="Images/MainWindow.png" width="1437" height="921" fetchpriority="high" alt="Hyper-V Launcher Shortcuts page listing Windows and Ubuntu virtual machines"><figcaption>All your VM shortcuts.</figcaption></figure>
-</section>
-<section class="wrap section" id="features"><p class="eyebrow">LESS FRICTION. MORE CONTROL.</p><h2>Small conveniences.<br>A smoother workflow.</h2><div class="feature-grid">
-<article><p class="step">01 / ACCESS</p><h3>A shortcut to every machine</h3><p>Create Desktop and Start Menu shortcuts for your VMs. Launch them straight from the places you already use.</p></article>
-<article><p class="step">02 / LAUNCH</p><h3>Always within reach</h3><p>Open a machine from the launcher or the system tray. Your configured shortcuts are ready when you are.</p></article>
-<article><p class="step">03 / AUTOMATE</p><h3>Let the details handle themselves</h3><p>Choose to pause or shut down a VM when its window closes. Automatically create new shortcuts and clean up deleted machines.</p></article>
-</div></section>
-<section class="wrap section" id="guide"><p class="eyebrow">A QUICK LOOK INSIDE</p><h2>From VM to shortcut<br>in a few simple steps.</h2><p>After installing, open Hyper-V Launcher from the Start Menu.</p>
-<article class="walkthrough"><div><p class="step">01 — PICK YOUR MACHINE</p><h3>Your local VMs, together.</h3><p>Open the Virtual Machines page, select a machine, and choose <strong>Create Shortcut</strong>.</p></div><a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="1437" height="921" loading="lazy" alt="Virtual Machines page with available machines and Create Shortcut action"></a></article>
-<article class="walkthrough"><div><p class="step">02 — MAKE IT YOURS</p><h3>Set it up your way.</h3><p>Name your shortcut, choose Desktop or Start Menu placement, and decide what happens when the VM window closes.</p></div><a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size Create Shortcut screenshot"><img src="Images/CreateShortcut.png" width="762" height="651" loading="lazy" alt="Create Shortcut dialog with name, shortcut locations, and after-close action"></a></article>
-<div class="extras"><article><p class="step">03 — LAUNCH FROM THE TRAY</p><h3>Ready without opening the app.</h3><p>Your shortcuts are also available from the system tray menu.</p><a href="Images/TrayApp.png" aria-label="View full-size system tray screenshot"><img src="Images/TrayApp.png" width="384" height="364" loading="lazy" alt="Hyper-V Launcher system tray menu listing virtual machine shortcuts"></a></article>
-<article><p class="step">04 — KEEP SHORTCUTS IN SYNC</p><h3>A little less housekeeping.</h3><p>Enable automatic detection in Settings to get notifications for new VMs. Deleted VMs have their shortcuts cleaned up automatically.</p><a href="Images/Notifications.png" aria-label="View full-size notification screenshot"><img src="Images/Notifications.png" width="506" height="699" loading="lazy" alt="Windows notifications for newly detected Hyper-V virtual machines"></a></article></div></section>
-<section class="download wrap" id="download"><div><p class="eyebrow">READY WHEN YOU ARE</p><h2>Put your VMs a click away.</h2><p>Download the setup for Windows x64 with Hyper-V enabled.</p></div><div class="download-actions"><a class="button" href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe">Download</a><a href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.Installer.msi">MSI installer</a><a href="https://github.com/andrezammit/hypervlauncher-site/releases">All releases &amp; release notes</a></div></section>
-</main>
-<footer class="wrap"><a class="brand" href="./">Hyper-V Launcher</a><p>By <a href="https://andrezammit.com">Andre Zammit</a></p></footer>
-</body></html>
-
-
-
-
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>Hyper-V Launcher</a>
+            <nav aria-label="Main navigation">
+                <a href="./#features">Features</a>
+                <a href="guide.html">Guide</a>
+                <a class="button button-small" href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe">Download</a>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        <section class="hero wrap" aria-labelledby="hero-title">
+            <h1 id="hero-title">Your virtual machines.<br>Ready when you are.</h1>
+            <p class="intro">Launch your local Hyper-V machines from your desktop, Start Menu, or system tray.</p>
+            <a class="button" href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe">Download</a>
+            <p class="requirements">Windows x64 · Hyper-V required</p>
+        </section>
+        <div class="product-stage wrap">
+            <a href="Images/MainWindow.png" aria-label="View full-size Hyper-V Launcher screenshot">
+                <img src="Images/MainWindow.png" width="1437" height="921" fetchpriority="high" alt="Hyper-V Launcher Shortcuts page listing Windows and Ubuntu virtual machines">
+            </a>
+        </div>
+        <section class="features wrap" id="features" aria-label="Features">
+            <article>
+                <h2>Shortcuts where you need them</h2>
+                <p>Create shortcuts for your virtual machines on your desktop or in the Start Menu.</p>
+            </article>
+            <article>
+                <h2>Launch from the system tray</h2>
+                <p>Access your configured shortcuts from the system tray and launch a machine when you need it.</p>
+            </article>
+            <article>
+                <h2>Choose what happens next</h2>
+                <p>Automatically pause or shut down your machine after closing its VM window.</p>
+            </article>
+        </section>
+        <section class="download" id="download" aria-labelledby="download-title">
+            <div class="wrap">
+                <h2 id="download-title">Make your everyday VM workflow simpler.</h2>
+                <div class="download-actions">
+                    <a class="button" href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe">Download</a>
+                    <a class="secondary-link" href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.Installer.msi">MSI installer</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="wrap site-footer">
+        <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"></span>Hyper-V Launcher</a>
+        <p>By <a href="https://andrezammit.com">Andre Zammit</a></p>
+    </footer>
+</body>
+</html>
