@@ -1,41 +1,48 @@
-# Hyper-V Launcher website
+# Hyper-V Launcher
 
-Source for the public website at https://hypervlauncher.andrezammit.com/. The site is custom static HTML and CSS, served by GitHub Pages. No theme, JavaScript, or build step is required.
+**Your virtual machines. Ready when you are.**
 
-## Publish
+Hyper-V Launcher makes your local Hyper-V virtual machines easier to access. Create desktop and Start Menu shortcuts, launch a VM from the system tray, and choose what happens when its connection window closes.
 
-1. Create a **public** GitHub repository named `hypervlauncher-site` under `andrezammit`, without an initial README.
-2. From this folder, run:
+[Download](https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe) · [Visit the website](https://hypervlauncher.andrezammit.com/) · [Read the guide](https://hypervlauncher.andrezammit.com/guide.html)
 
-   ```powershell
-   git push -u origin main
-   ```
+Windows x64 · Hyper-V required
 
-3. In the new repository's **Settings > Pages**, choose **Deploy from a branch**, `main`, `/(root)`. Check the temporary GitHub Pages URL and its images.
-4. In the old `hypervlauncher` repository's **Settings > Pages**, remove the custom domain.
-5. In the new repository's **Settings > Pages**, set `hypervlauncher.andrezammit.com` as the custom domain. GitHub will create the root `CNAME` file.
-6. Check the custom-domain page and images, then make the application repository private.
+![Hyper-V Launcher showing shortcuts for Windows and Ubuntu virtual machines](Images/MainWindow.png)
 
-## Downloads
+## Shortcuts where you need them
 
-The page links to setup EXE and MSI assets in this public repository's GitHub Releases. The application repository's Release workflow builds and verifies the setup files, then publishes them here using its `RELEASE_TOKEN` Actions secret. See the application repository's `Setup/README.md` for token setup and release instructions.
+Give each VM a recognizable shortcut on your desktop, in the Start Menu, or both. Launch it directly, or use the launcher's Shortcuts page to open and manage your configured machines.
 
-The `releases/latest/download/` links automatically follow the latest release. Keep the asset names `HyperVLauncher.Setup.exe` and `HyperVLauncher.Setup.Installer.msi` unchanged. Download links become available after the first successful release. Application source remains in the separate application repository; release tags here refer to website commits.
+![Virtual Machines page with the Create Shortcut action](Images/VirtualMachines.png)
 
-## Local preview
+## Launch from the system tray
 
-Serve this folder with any static HTTP server and open index.html. The landing page is in index.html and the illustrated usage guide is in guide.html, with styles.css and the original screenshots in Images/. The .nojekyll file disables theme processing.
+Your configured VM shortcuts are available from the Hyper-V Launcher tray menu. Open a machine without first opening the management window, and enable **Start on Windows login** to keep the tray application available after you sign in.
 
-The previous Markdown page is retained as reference; index.html is the website entry point. Download links remain pointed at this repository's latest public release.
+![Hyper-V Launcher system tray menu](Images/TrayApp.png)
 
-## Search and sharing
+## Choose what happens next
 
-Both pages have unique titles and descriptions, canonical URLs, Open Graph and Twitter preview metadata, and JSON-LD structured data. Preview images use the original application screenshots. The homepage describes the software without invented ratings or reviews; this does not claim eligibility for a Google software-app rich result.
+Each shortcut can leave the VM in its current state, save its state using **Pause the Virtual Machine**, or request a shutdown when its connection window closes.
 
-The canonical domain is https://hypervlauncher.andrezammit.com/. Keep canonical URLs, structured data, social image URLs, robots.txt, and sitemap.xml in sync if this changes. The sitemap includes only the homepage and guide. Add new public HTML pages when they are created; do not add download assets or fragment links. No artificial last-modified dates are used.
+Choose the action when creating a shortcut or edit an existing shortcut later. See the [guide to close actions](https://hypervlauncher.andrezammit.com/guide.html#close-actions) for behavior and shutdown considerations.
 
-After publishing:
-- Confirm the custom domain, HTTPS, both pages, robots.txt, sitemap.xml, and social image URLs return successfully.
-- Confirm the GitHub Pages address redirects to the custom domain.
-- Add or verify the domain in Google Search Console, submit sitemap.xml, and inspect both page URLs.
-- Validate deployed JSON-LD with Schema.org Validator and check actual indexing in Search Console. Metadata and valid structured data do not guarantee indexing or rich results.
+![Shortcut settings with desktop and Start Menu options and a close action](Images/CreateShortcut.png)
+
+## Keep your shortcuts in sync
+
+Enable automatic shortcut creation for newly detected VMs, or choose to be prompted first. You can also enable cleanup to remove associated shortcuts when a VM is deleted.
+
+## Get started
+
+1. Make sure Hyper-V is enabled and your VM is available locally in Hyper-V Manager.
+2. [Download the setup](https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe) and install Hyper-V Launcher.
+3. Open **Hyper-V Launcher Console** from the Start Menu.
+4. Select a VM on the **Virtual Machines** page and choose **Create Shortcut**.
+
+The [illustrated guide](https://hypervlauncher.andrezammit.com/guide.html) covers requirements, shortcut creation, automatic actions, and troubleshooting.
+
+[MSI installer](https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.Installer.msi) · [All releases and release notes](https://github.com/andrezammit/hypervlauncher-site/releases)
+
+Created by [Andre Zammit](https://andrezammit.com).
