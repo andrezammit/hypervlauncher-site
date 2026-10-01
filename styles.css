@@ -144,3 +144,39 @@ img { display: block; max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
 }
+
+/* Usage guide: readable sections and an in-page contents list. */
+.guide-intro { max-width: 760px; font-size: 18px; }
+.guide-contents {
+    display: block;
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: var(--tint);
+    border-radius: 6px;
+}
+.guide .guide-contents h2 { font-size: 19px; margin-bottom: 12px; }
+.guide-contents ul { margin: 0; padding-left: 20px; columns: 2; column-gap: 40px; }
+.guide-contents li { break-inside: avoid; padding-block: 5px; }
+.guide-contents a { color: var(--blue); text-decoration: underline; }
+.guide-section { margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line); }
+.guide-section > p { max-width: 850px; }
+.guide-section p + p { margin-top: 16px; }
+.guide-row { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 24px; }
+.guide-row > * { min-width: 0; }
+.guide-row-small { grid-template-columns: 1.4fr .6fr; }
+.guide-row-small img { max-height: 420px; width: auto; margin-inline: auto; }
+.guide-section ul, .guide-section ol { padding-left: 23px; color: var(--muted); margin: 0 0 20px; }
+.guide-section li + li { margin-top: 12px; }
+.action-list { margin: 0 0 22px; }
+.action-list dt { font-weight: 600; margin-bottom: 6px; }
+.action-list dd { color: var(--muted); margin: 0 0 18px; }
+.troubleshooting h3 { font-size: 20px; line-height: 1.4; margin: 28px 0 10px; }
+@media (max-width: 800px) {
+    .guide-row { grid-template-columns: 1fr; gap: 24px; }
+    .guide-row-small img { margin-inline: 0; }
+}
+@media (max-width: 600px) {
+    .guide-contents { padding: 20px; }
+    .guide-contents ul { columns: 1; }
+    .guide-section { margin-top: 32px; padding-top: 28px; }
+}
