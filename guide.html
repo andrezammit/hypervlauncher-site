@@ -66,11 +66,108 @@
         </div>
     </header>
 <main id="main">
-<section class="wrap guide" id="guide"><h1>Getting started</h1><p>After installing, open Hyper-V Launcher from the Start Menu.</p>
-<article class="walkthrough"><div><h2>Your local VMs, together.</h2><p>Open the Virtual Machines page, select a machine, and choose <strong>Create Shortcut</strong>.</p></div><a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="1437" height="921" loading="lazy" alt="Virtual Machines page with available machines and Create Shortcut action"></a></article>
-<article class="walkthrough"><div><h2>Set it up your way.</h2><p>Name your shortcut, choose Desktop or Start Menu placement, and decide what happens when the VM window closes.</p></div><a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size Create Shortcut screenshot"><img src="Images/CreateShortcut.png" width="762" height="651" loading="lazy" alt="Create Shortcut dialog with name, shortcut locations, and after-close action"></a></article>
-<div class="extras"><article><h2>Ready without opening the app.</h2><p>Your shortcuts are also available from the system tray menu.</p><a href="Images/TrayApp.png" aria-label="View full-size system tray screenshot"><img src="Images/TrayApp.png" width="384" height="364" loading="lazy" alt="Hyper-V Launcher system tray menu listing virtual machine shortcuts"></a></article>
-<article><h2>A little less housekeeping.</h2><p>Enable automatic detection in Settings to get notifications for new VMs. Deleted VMs have their shortcuts cleaned up automatically.</p><a href="Images/Notifications.png" aria-label="View full-size notification screenshot"><img src="Images/Notifications.png" width="506" height="699" loading="lazy" alt="Windows notifications for newly detected Hyper-V virtual machines"></a></article></div></section>
+    <article class="wrap guide" id="guide">
+        <h1>Hyper-V Launcher guide</h1>
+        <p class="guide-intro">Create shortcuts for local Hyper-V virtual machines, launch them from the system tray, and choose what happens when you close a VM connection.</p>
+        <nav class="guide-contents" aria-label="On this page">
+            <h2>On this page</h2>
+            <ul>
+                <li><a href="#requirements">Requirements and installation</a></li>
+                <li><a href="#desktop-shortcuts">Create desktop and Start Menu shortcuts</a></li>
+                <li><a href="#system-tray">Launch a VM from the system tray</a></li>
+                <li><a href="#close-actions">Pause or shut down a VM when its window closes</a></li>
+                <li><a href="#automatic-shortcuts">Automatically manage VM shortcuts</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+        </nav>
+
+        <section class="guide-section" id="requirements">
+            <h2>Requirements and installation</h2>
+            <p>Hyper-V Launcher runs on Windows x64 and manages virtual machines on your local computer. You need Hyper-V enabled and a VM already created in Hyper-V Manager.</p>
+            <p>For a Windows desktop host, Microsoft lists Windows 10 or Windows 11 Pro and Enterprise as editions that support Hyper-V. Windows Home does not include the Hyper-V role. Your hardware must also support virtualization. See <a href="https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/host-hardware-requirements">Microsoft’s Hyper-V requirements</a> and <a href="https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v">instructions for enabling Hyper-V</a>.</p>
+            <p><a href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe">Download Hyper-V Launcher</a>, run the setup, then open <strong>Hyper-V Launcher Console</strong> from the Start Menu. Use Hyper-V Manager to create and configure your VMs before adding launcher shortcuts.</p>
+        </section>
+
+        <section class="guide-section" id="desktop-shortcuts">
+            <h2>Create a desktop shortcut for a Hyper-V virtual machine</h2>
+            <p>A shortcut opens a local VM without navigating through Hyper-V Manager each time. You can place it on your desktop, in the Start Menu, or both.</p>
+            <div class="guide-row">
+                <div>
+                    <ol>
+                        <li>Open <strong>Virtual Machines</strong> in Hyper-V Launcher.</li>
+                        <li>Select the VM you want to use and click <strong>Create Shortcut</strong>.</li>
+                        <li>Enter a shortcut name that you will recognize.</li>
+                        <li>Select <strong>Desktop Shortcut</strong>, <strong>Start Menu Shortcut</strong>, or both.</li>
+                        <li>Choose what should happen when the VM connection closes, then click <strong>Save</strong>.</li>
+                    </ol>
+                    <p>Double-click the desktop shortcut or open it from the Start Menu. Hyper-V Launcher starts a stopped or saved VM before opening its connection window.</p>
+                    <p>You can also select a configured shortcut on the <strong>Shortcuts</strong> page and click <strong>Launch</strong>. To change its name or close action later, select it and click <strong>Edit</strong>.</p>
+                </div>
+                <a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="1437" height="921" loading="lazy" alt="Virtual Machines page with a selected VM and the Create Shortcut control"></a>
+            </div>
+        </section>
+
+        <section class="guide-section" id="system-tray">
+            <h2>Launch Hyper-V virtual machines from the system tray</h2>
+            <div class="guide-row guide-row-small">
+                <div>
+                    <p>Click or right-click the <strong>Hyper-V Launcher</strong> icon in the Windows notification area, then select a configured shortcut from the menu. The shortcut uses the same close action as when launched from the desktop.</p>
+                    <p>If the icon is hidden, check the notification area’s hidden icons menu. Choose <strong>Hyper-V Launcher Console</strong> in the tray menu to manage your shortcuts.</p>
+                    <p>In <strong>Settings</strong>, enable <strong>Start on Windows login</strong> to have the tray application start when you sign in. A VM must have a configured shortcut to appear in the tray menu.</p>
+                </div>
+                <a class="screenshot" href="Images/TrayApp.png" aria-label="View full-size system tray screenshot"><img src="Images/TrayApp.png" width="384" height="364" loading="lazy" alt="Hyper-V Launcher tray menu with virtual machine shortcuts and the Console option"></a>
+            </div>
+        </section>
+
+        <section class="guide-section" id="close-actions">
+            <h2>Pause or shut down a VM when its window closes</h2>
+            <p>Each shortcut has its own close action. Choose it when creating a shortcut, or select an existing shortcut on the <strong>Shortcuts</strong> page and click <strong>Edit</strong>.</p>
+            <div class="guide-row">
+                <div>
+                    <dl class="action-list">
+                        <dt>Leave in current state</dt>
+                        <dd>Closing the connection window does not request a VM state change. A running VM can keep running in the background.</dd>
+                        <dt>Pause the Virtual Machine</dt>
+                        <dd>This option saves the VM’s state. Launching the shortcut again starts the saved VM so you can continue from that state.</dd>
+                        <dt>Shutdown the Virtual Machine</dt>
+                        <dd>Requests a guest shutdown. The implementation can fall back to turning off the VM when a particular shutdown failure occurs, so save your work inside the guest before closing the connection.</dd>
+                    </dl>
+                    <p>Click <strong>Save</strong>, then launch the configured shortcut to use the selected action. The action runs when that shortcut’s VM connection window closes. Opening a separate connection directly through Hyper-V Manager does not use the shortcut’s close action.</p>
+                </div>
+                <a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size shortcut settings screenshot"><img src="Images/CreateShortcut.png" width="762" height="651" loading="lazy" alt="Shortcut dialog showing the action to perform when the virtual machine connection closes"></a>
+            </div>
+        </section>
+
+        <section class="guide-section" id="automatic-shortcuts">
+            <h2>Automatically create and clean up VM shortcuts</h2>
+            <div class="guide-row guide-row-small">
+                <div>
+                    <p>Open <strong>Settings</strong> to choose how newly created and deleted VMs are handled. Settings are saved as you change the checkboxes.</p>
+                    <ul>
+                        <li>Enable <strong>Automatically create Virtual Machine shortcuts</strong> to create a shortcut when a new VM is detected. Choose <strong>Create Desktop shortcut</strong> and <strong>Create Start Menu shortcut</strong> for the locations you want.</li>
+                        <li>If you prefer to decide each time, turn off automatic creation and enable <strong>Show a new shortcut prompt when a new Virtual Machine is created</strong>. The prompt option is disabled while automatic creation is enabled.</li>
+                        <li>Enable <strong>Automatically delete shortcuts when a Virtual Machine is deleted</strong> to remove the associated shortcuts when deletion is detected.</li>
+                    </ul>
+                    <p>These settings handle VM creation and deletion events. For machines you already have, create shortcuts from the <strong>Virtual Machines</strong> page. Automatic creation and cleanup depend on the installed <strong>Hyper-V Launcher Service</strong>.</p>
+                </div>
+                <a class="screenshot" href="Images/Notifications.png" aria-label="View full-size VM notification screenshot"><img src="Images/Notifications.png" width="506" height="699" loading="lazy" alt="Windows notifications offering to create a shortcut and confirming automatic shortcut creation"></a>
+            </div>
+        </section>
+
+        <section class="guide-section troubleshooting" id="troubleshooting">
+            <h2>Troubleshooting Hyper-V Launcher</h2>
+            <h3>My virtual machine is not listed</h3>
+            <p>Open Hyper-V Manager and confirm the VM exists on this computer. Hyper-V Launcher lists local VMs, not those on a remote host. Confirm Hyper-V is enabled and that you can access the local VM in Hyper-V Manager, then reopen the launcher to reload the list.</p>
+            <h3>The VM is listed, but there is no desktop shortcut</h3>
+            <p>A VM in the <strong>Virtual Machines</strong> list is not necessarily a configured shortcut. Select it, choose <strong>Create Shortcut</strong>, select <strong>Desktop Shortcut</strong>, and save. Automatic creation applies to newly detected VMs; it does not create desktop shortcuts for every existing machine when enabled.</p>
+            <h3>The tray icon or a tray shortcut is missing</h3>
+            <p>Check the hidden icons menu and confirm the tray application is running. If you closed it, you can start <strong>HyperVLauncher.Apps.Tray.exe</strong> from your Hyper-V Launcher installation folder. Enable <strong>Start on Windows login</strong> for future sign-ins. If only a VM entry is missing, check that it has a shortcut on the <strong>Shortcuts</strong> page.</p>
+            <h3>The close action did not run</h3>
+            <p>Check the action saved on the shortcut you launched. Use that configured shortcut rather than a connection opened directly in Hyper-V Manager, and close the VM connection window rather than just the launcher’s management window.</p>
+            <h3>Automatic shortcut creation or deletion is not working</h3>
+            <p>Check the corresponding checkbox in <strong>Settings</strong>. Open Windows <strong>Services</strong> and check that <strong>Hyper-V Launcher Service</strong> is running. Creation and deletion have separate settings; enabling one does not enable the other.</p>
+        </section>
+    </article>
 </main>
     <footer class="wrap site-footer">
         <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Hyper-V Launcher</a>
