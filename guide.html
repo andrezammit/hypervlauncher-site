@@ -85,6 +85,7 @@
                 <li><a href="#desktop-shortcuts">Create desktop and Start Menu shortcuts</a></li>
                 <li><a href="#system-tray">Launch a VM from the system tray</a></li>
                 <li><a href="#close-actions">Pause or shut down a VM when its window closes</a></li>
+                <li><a href="#remote-connections">Start a VM from a remote connection</a></li>
                 <li><a href="#automatic-shortcuts">Automatically manage VM shortcuts</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
             </ul>
@@ -112,7 +113,7 @@
                     <p>Double-click the desktop shortcut or open it from the Start Menu. Hyper-V Launcher starts a stopped or saved VM before opening its connection window.</p>
                     <p>You can also select a configured shortcut on the <strong>Shortcuts</strong> page and click <strong>Launch</strong>. To change its name or close action later, select it and click <strong>Edit</strong>.</p>
                 </div>
-                <a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="1437" height="921" loading="lazy" alt="Virtual Machines page with a selected VM and the Create Shortcut control"></a>
+                <a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="1086" height="703" loading="lazy" alt="Virtual Machines page with a selected VM and the Create Shortcut control"></a>
             </div>
         </section>
 
@@ -121,10 +122,10 @@
             <div class="guide-row guide-row-small">
                 <div>
                     <p>Click or right-click the <strong>Hyper-V Launcher</strong> icon in the Windows notification area, then select a configured shortcut from the menu. The shortcut uses the same close action as when launched from the desktop.</p>
-                    <p>If the icon is hidden, check the notification area’s hidden icons menu. Choose <strong>Hyper-V Launcher Console</strong> in the tray menu to manage your shortcuts.</p>
+                    <p>If the icon is hidden, check the notification area’s hidden icons menu. Choose <strong>Open Hyper-V Launcher</strong> in the tray menu to manage your shortcuts.</p>
                     <p>In <strong>Settings</strong>, enable <strong>Start on Windows login</strong> to have the tray application start when you sign in. A VM must have a configured shortcut to appear in the tray menu.</p>
                 </div>
-                <a class="screenshot" href="Images/TrayApp.png" aria-label="View full-size system tray screenshot"><img src="Images/TrayApp.png" width="384" height="364" loading="lazy" alt="Hyper-V Launcher tray menu with virtual machine shortcuts and the Console option"></a>
+                <a class="screenshot" href="Images/TrayApp.png" aria-label="View full-size system tray screenshot"><img src="Images/TrayApp.png" width="221" height="153" loading="lazy" alt="Hyper-V Launcher tray menu with virtual machine shortcuts and the Open Hyper-V Launcher option"></a>
             </div>
         </section>
 
@@ -143,8 +144,22 @@
                     </dl>
                     <p>Click <strong>Save</strong>, then launch the configured shortcut to use the selected action. The action runs when that shortcut’s VM connection window closes. Opening a separate connection directly through Hyper-V Manager does not use the shortcut’s close action.</p>
                 </div>
-                <a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size shortcut settings screenshot"><img src="Images/CreateShortcut.png" width="762" height="651" loading="lazy" alt="Shortcut dialog showing the action to perform when the virtual machine connection closes"></a>
+                <a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size shortcut settings screenshot"><img src="Images/CreateShortcut.png" width="566" height="627" loading="lazy" alt="Shortcut dialog showing the action to perform when the virtual machine connection closes"></a>
             </div>
+        </section>
+
+        <section class="guide-section" id="remote-connections">
+            <h2>Start a VM from a remote connection</h2>
+            <p>Enable <strong>Start shortcut from remote connection</strong> when creating or editing a shortcut. Hyper-V Launcher listens on a port on the Hyper-V host. An incoming connection starts the VM and forwards traffic to the destination port inside the guest.</p>
+            <ol>
+                <li>Enable Remote Desktop inside a guest operating system that supports hosting Remote Desktop connections. Make sure it accepts connections and that the Hyper-V host can reach the guest over its virtual network.</li>
+                <li>Choose an unused <strong>Local port</strong> on the Hyper-V host, for example <strong>3390</strong>. Use a different local port for each shortcut with remote connections enabled; avoid ports already used by other services.</li>
+                <li>Set <strong>Remote port</strong> to the guest's Remote Desktop listening port, usually <strong>3389</strong>, then click <strong>Save</strong>.</li>
+                <li>Keep <strong>Hyper-V Launcher Service</strong> running. From your Remote Desktop client, connect to the host's name or IP address followed by the local port, for example <code>my-hyperv-pc:3390</code>. Sign in with the guest's credentials.</li>
+            </ol>
+            <p>The local port belongs to the host; the remote port belongs to the VM. For example, a connection to <code>my-hyperv-pc:3390</code> is forwarded to port <code>3389</code> on the guest. The guest must report an IP address to Hyper-V and be reachable from the host. Allow the chosen host port through your firewall only for the networks and clients that need access; use a trusted network or VPN for remote access.</p>
+            <p>If the connection fails while the VM starts, wait for the guest and Remote Desktop service to become ready, then reconnect. Check the host port, guest networking, guest Remote Desktop settings, and that the launcher service is running.</p>
+            <p>The shortcut's <a href="#close-actions">close action</a> can also run after a remote connection disconnects. The launcher waits until no other proxied connections to that VM remain, and ignores connections lasting two seconds or less. Save your guest work before disconnecting when using a shutdown action.</p>
         </section>
 
         <section class="guide-section" id="automatic-shortcuts">
