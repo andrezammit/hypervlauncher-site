@@ -85,6 +85,7 @@
                 <li><a href="#desktop-shortcuts">Create desktop and Start Menu shortcuts</a></li>
                 <li><a href="#system-tray">Launch a VM from the system tray</a></li>
                 <li><a href="#close-actions">Pause or shut down a VM when its window closes</a></li>
+                <li><a href="#remote-connections">Start a VM from a remote connection</a></li>
                 <li><a href="#automatic-shortcuts">Automatically manage VM shortcuts</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
             </ul>
@@ -145,6 +146,20 @@
                 </div>
                 <a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size shortcut settings screenshot"><img src="Images/CreateShortcut.png" width="762" height="651" loading="lazy" alt="Shortcut dialog showing the action to perform when the virtual machine connection closes"></a>
             </div>
+        </section>
+
+        <section class="guide-section" id="remote-connections">
+            <h2>Start a VM from a remote connection</h2>
+            <p>Enable <strong>Start shortcut from remote connection</strong> when creating or editing a shortcut. Hyper-V Launcher listens on a port on the Hyper-V host. An incoming connection starts the VM and forwards traffic to the destination port inside the guest.</p>
+            <ol>
+                <li>Enable Remote Desktop inside a guest operating system that supports hosting Remote Desktop connections. Make sure it accepts connections and that the Hyper-V host can reach the guest over its virtual network.</li>
+                <li>Choose an unused <strong>Local port</strong> on the Hyper-V host, for example <strong>3390</strong>. Use a different local port for each shortcut with remote connections enabled; avoid ports already used by other services.</li>
+                <li>Set <strong>Remote port</strong> to the guest's Remote Desktop listening port, usually <strong>3389</strong>, then click <strong>Save</strong>.</li>
+                <li>Keep <strong>Hyper-V Launcher Service</strong> running. From your Remote Desktop client, connect to the host's name or IP address followed by the local port, for example <code>my-hyperv-pc:3390</code>. Sign in with the guest's credentials.</li>
+            </ol>
+            <p>The local port belongs to the host; the remote port belongs to the VM. For example, a connection to <code>my-hyperv-pc:3390</code> is forwarded to port <code>3389</code> on the guest. The guest must report an IP address to Hyper-V and be reachable from the host. Allow the chosen host port through your firewall only for the networks and clients that need access; use a trusted network or VPN for remote access.</p>
+            <p>If the connection fails while the VM starts, wait for the guest and Remote Desktop service to become ready, then reconnect. Check the host port, guest networking, guest Remote Desktop settings, and that the launcher service is running.</p>
+            <p>The shortcut's <a href="#close-actions">close action</a> can also run after a remote connection disconnects. The launcher waits until no other proxied connections to that VM remain, and ignores connections lasting two seconds or less. Save your guest work before disconnecting when using a shutdown action.</p>
         </section>
 
         <section class="guide-section" id="automatic-shortcuts">
