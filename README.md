@@ -6,15 +6,27 @@ Hyper-V Launcher makes your local Hyper-V virtual machines easier to access. Cre
 
 [Download](https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe) · [Visit the website](https://hypervlauncher.andrezammit.com/) · [Read the guide](https://hypervlauncher.andrezammit.com/guide.html)
 
-Windows x64 · Hyper-V required
+Version 1.0.3 · Windows x64 · Hyper-V required
 
-![Hyper-V Launcher showing shortcuts for Windows and Ubuntu virtual machines](Images/MainWindow.png)
+[What’s new in 1.0.3](https://hypervlauncher.andrezammit.com/guide.html#version-1-0-3)
+
+## Dashboard and VM management
+
+Launch configured shortcuts and running VMs, check VM state totals and active RDP proxy connections, and see Hyper-V and Launcher Monitor availability from the dashboard.
+
+![Hyper-V Launcher dashboard](Images/Dashboard.png)
+
+The refreshed Console includes list search, current VM states, guest OS details and icons, context menus, and multiple-selection launching. Select rows with Ctrl or Shift and choose **Launch**. Shortcuts save their guest OS icon at creation; older shortcuts without saved icon metadata use the default icon.
+
+Console and LaunchPad can run without elevation while the installed Monitor service handles privileged operations. Version 1.0.3 also improves standard-user service access, tray responsiveness, logging, and installer reliability.
 
 ## Shortcuts where you need them
 
 Give each VM a recognizable shortcut on your desktop, in the Start Menu, or both. Launch it directly, or use the launcher's Shortcuts page to open and manage your configured machines.
 
 ![Virtual Machines page with the Create Shortcut action](Images/VirtualMachines.png)
+
+![Shortcuts page](Images/MainWindow.png)
 
 ## Launch from the system tray
 
@@ -41,6 +53,14 @@ The shortcut's close action can also run after remote connections disconnect. Se
 ## Keep your shortcuts in sync
 
 In **Settings**, enable automatic shortcut creation for newly detected VMs, or choose to be prompted first. You can also enable cleanup to remove associated shortcuts when a VM is deleted. Settings are saved as you change the checkboxes, and automatic creation and cleanup require **Hyper-V Launcher Service** to be running. For existing VMs, create shortcuts from the **Virtual Machines** page.
+
+## Activity and support
+
+Use **Events** to search and filter VM, shortcut, and connection activity by type, outcome, and time range. Select an event for details.
+
+![Events page](Images/Events.png)
+
+In **About**, check the installed version or choose **Save support archive** to save available logs and basic system information as a local ZIP. Logs may contain names, paths, and network addresses, so review the archive before sharing. It does not collect settings, activity databases, or VM files, and is not sent automatically. See the [support guide](https://hypervlauncher.andrezammit.com/guide.html#support).
 
 ## Get started
 

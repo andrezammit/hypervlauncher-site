@@ -13,7 +13,7 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hyper-V Launcher — Desktop Shortcuts &amp; System Tray Access</title>
-    <meta name="description" content="Launch local Hyper-V virtual machines from your desktop, Start Menu, or system tray. Download Hyper-V Launcher for Windows x64.">
+    <meta name="description" content="Launch and manage local Hyper-V virtual machines with a dashboard, desktop shortcuts, system tray access, remote connections, and activity history. Free for Windows x64.">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -24,17 +24,17 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://hypervlauncher.andrezammit.com/">
     <meta property="og:title" content="Hyper-V Launcher — Desktop Shortcuts &amp; System Tray Access">
-    <meta property="og:description" content="Launch local Hyper-V virtual machines from your desktop, Start Menu, or system tray. Download Hyper-V Launcher for Windows x64.">
-    <meta property="og:image" content="https://hypervlauncher.andrezammit.com/Images/MainWindow.png">
+    <meta property="og:description" content="Launch and manage local Hyper-V virtual machines with a dashboard, desktop shortcuts, system tray access, remote connections, and activity history. Free for Windows x64.">
+    <meta property="og:image" content="https://hypervlauncher.andrezammit.com/Images/Dashboard.png">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1437">
-    <meta property="og:image:height" content="921">
-    <meta property="og:image:alt" content="Hyper-V Launcher showing shortcuts for local virtual machines">
+    <meta property="og:image:width" content="2172">
+    <meta property="og:image:height" content="1406">
+    <meta property="og:image:alt" content="Hyper-V Launcher dashboard with shortcuts, running VMs, and service status">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hyper-V Launcher — Desktop Shortcuts &amp; System Tray Access">
-    <meta name="twitter:description" content="Launch local Hyper-V virtual machines from your desktop, Start Menu, or system tray. Download Hyper-V Launcher for Windows x64.">
-    <meta name="twitter:image" content="https://hypervlauncher.andrezammit.com/Images/MainWindow.png">
-    <meta name="twitter:image:alt" content="Hyper-V Launcher showing shortcuts for local virtual machines">
+    <meta name="twitter:description" content="Launch and manage local Hyper-V virtual machines with a dashboard, desktop shortcuts, system tray access, remote connections, and activity history. Free for Windows x64.">
+    <meta name="twitter:image" content="https://hypervlauncher.andrezammit.com/Images/Dashboard.png">
+    <meta name="twitter:image:alt" content="Hyper-V Launcher dashboard with shortcuts, running VMs, and service status">
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -56,7 +56,7 @@
             "@id": "https://hypervlauncher.andrezammit.com/#webpage",
             "url": "https://hypervlauncher.andrezammit.com/",
             "name": "Hyper-V Launcher — Desktop Shortcuts & System Tray Access",
-            "description": "Launch local Hyper-V virtual machines from your desktop, Start Menu, or system tray. Download Hyper-V Launcher for Windows x64.",
+            "description": "Launch and manage local Hyper-V virtual machines with a dashboard, desktop shortcuts, system tray access, remote connections, and activity history. Free for Windows x64.",
             "inLanguage": "en",
             "isPartOf": {
                 "@id": "https://hypervlauncher.andrezammit.com/#website"
@@ -70,12 +70,13 @@
             "@id": "https://hypervlauncher.andrezammit.com/#application",
             "name": "Hyper-V Launcher",
             "url": "https://hypervlauncher.andrezammit.com/",
-            "description": "Launch local Hyper-V virtual machines from your desktop, Start Menu, or system tray. Download Hyper-V Launcher for Windows x64.",
+            "description": "Launch and manage local Hyper-V virtual machines with a dashboard, desktop shortcuts, system tray access, remote connections, and activity history. Free for Windows x64.",
             "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "Windows x64",
             "softwareRequirements": "Hyper-V enabled",
+            "softwareVersion": "1.0.3",
             "downloadUrl": "https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe",
-            "screenshot": "https://hypervlauncher.andrezammit.com/Images/MainWindow.png",
+            "screenshot": "https://hypervlauncher.andrezammit.com/Images/Dashboard.png",
             "author": {
                 "@type": "Person",
                 "name": "Andre Zammit",
@@ -85,7 +86,12 @@
                 "Desktop and Start Menu shortcuts for Hyper-V virtual machines",
                 "Launch virtual machines from the system tray",
                 "Pause or shut down a virtual machine after closing its window",
-                "Automatic shortcut creation and cleanup"
+                "Automatic shortcut creation and cleanup",
+                "Dashboard with VM states, running VMs, and RDP proxy connections",
+                "Launch multiple selected shortcuts or virtual machines",
+                "Guest operating system icons for VMs and shortcuts",
+                "Start VMs from incoming remote connections",
+                "Searchable activity history and support archive export"
             ]
         }
     ]
@@ -107,13 +113,13 @@
     <main id="main">
         <section class="hero wrap" aria-labelledby="hero-title">
             <h1 id="hero-title">Your virtual machines.<br>Ready when you are.</h1>
-            <p class="intro">Launch your local Hyper-V machines from your desktop, Start Menu, or system tray.</p>
+            <p class="intro">Launch and manage your local Hyper-V machines from one dashboard, your desktop, Start Menu, or system tray.</p>
             <a class="button" href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe">Download</a>
-            <p class="requirements">Windows x64 · Hyper-V required</p>
+            <p class="requirements">Version 1.0.3 · Windows x64 · Hyper-V required<br><a href="guide.html#version-1-0-3">What’s new in 1.0.3</a></p>
         </section>
         <div class="product-stage wrap">
-            <a href="Images/MainWindow.png" aria-label="View full-size Hyper-V Launcher screenshot">
-                <img src="Images/MainWindow.png" width="1086" height="703" fetchpriority="high" alt="Hyper-V Launcher Shortcuts page listing Windows and Ubuntu virtual machines">
+            <a href="Images/Dashboard.png" aria-label="View full-size Hyper-V Launcher screenshot">
+                <img src="Images/Dashboard.png" width="2172" height="1406" fetchpriority="high" alt="Hyper-V Launcher dashboard with shortcuts, running VMs, VM state totals, RDP connections, and service status">
             </a>
         </div>
         <section class="features wrap" id="features" aria-label="Features">
@@ -127,8 +133,33 @@
             </article>
             <article>
                 <h2>Choose what happens next</h2>
-                <p>Automatically pause or shut down your machine after closing its VM window.</p>
+                <p>Leave a VM running, save its state, or request a shutdown when its connection window closes.</p>
             </article>
+        </section>
+        <section class="wrap guide-section release-overview" aria-labelledby="dashboard-title">
+            <h2 id="dashboard-title">Your VMs at a glance</h2>
+            <p>The dashboard brings configured shortcuts, running VMs, VM state totals, active RDP proxy connections, and Hyper-V and Monitor availability together. Search your lists, check current states, and launch multiple selected machines.</p>
+            <div class="extras">
+                <article>
+                    <h3>Start a VM by connecting to it</h3>
+                    <p>Connect to a configured port on the host. Launcher Monitor starts the VM and forwards traffic to the guest. <a href="guide.html#remote-connections">Set up remote connections</a>.</p>
+                </article>
+                <article>
+                    <h3>Keep shortcuts in sync</h3>
+                    <p>Automatically create shortcuts for newly detected VMs, choose to be prompted, and clean up shortcuts when a VM is deleted. <a href="guide.html#automatic-shortcuts">Choose your settings</a>.</p>
+                </article>
+                <article>
+                    <h3>Follow recent activity</h3>
+                    <p>Search and filter VM, shortcut, and connection events, then open an event for details. <a href="guide.html#events">Explore the Events page</a>.</p>
+                    <a class="screenshot" href="Images/Events.png" aria-label="View full-size Events screenshot"><img src="Images/Events.png" width="2172" height="1406" loading="lazy" alt="Events page with activity filters, outcomes, and event details"></a>
+                </article>
+                <article>
+                    <h3>Recognize your machines</h3>
+                    <p>Guest OS details and icons make VMs easier to identify. Shortcuts keep the icon saved when they were created, and the compact tray menu keeps them close at hand.</p>
+                    <a class="screenshot" href="Images/TrayApp.png" aria-label="View full-size tray menu screenshot"><img src="Images/TrayApp.png" width="440" height="422" loading="lazy" alt="Compact Hyper-V Launcher tray menu with saved guest OS icons"></a>
+                </article>
+            </div>
+            <p class="requirements">Need help? <a href="guide.html#support">Save a support archive</a> from the About page.</p>
         </section>
         <section class="download" id="download" aria-labelledby="download-title">
             <div class="wrap">

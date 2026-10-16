@@ -170,3 +170,8 @@ img { display: block; max-width: 100%; height: auto; }
     .guide-contents ul { columns: 1; }
     .guide-section { margin-top: 32px; padding-top: 28px; }
 }
+
+/* Current release feature overview. */
+.release-overview { margin-bottom: 64px; }
+.release-overview h2 { font-size: 27px; line-height: 1.3; letter-spacing: -.6px; margin: 0 0 18px; }
+.release-overview h3 { font-size: 20px; line-height: 1.4; margin: 0 0 12px; }

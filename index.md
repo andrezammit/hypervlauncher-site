@@ -7,9 +7,17 @@ Hyper-V Launcher
 
 Hyper-V Launcher is an application which makes it easier to access and manage your local Hyper-V Virtual Machines.
 
+Version **1.0.3** · [Website](https://hypervlauncher.andrezammit.com/) · [What’s new and user guide](https://hypervlauncher.andrezammit.com/guide.html#version-1-0-3)
+
 Main Features
 -------------
 
+* Dashboard with shortcuts, running VMs, state totals, RDP proxy connections, and service status
+* Search VM lists, view guest OS details and icons, and launch multiple selected entries
+* Recorded VM, shortcut, and connection activity with search, filters, and event details
+* Save a local support archive with logs and basic system information from About
+* Monitor service handles privileged operations while Console and LaunchPad run without elevation
+* Start a VM from an incoming connection to a configured host port
 * Create Desktop shortcuts for Virtual Machines
 * Create Start Menu shortcuts for Virtual Machines
 * Launch Virtual Machines from the System Tray
@@ -17,7 +25,7 @@ Main Features
 * Automatically create a shortcut when a Virtual Machine is created in Hyper-V
 * Shortcuts are automatically cleaned up if a Virtual Machine is deleted
 
-![Main Window](Images/MainWindow.png)
+![Dashboard](Images/Dashboard.png)
 
 How to Install and Run Hyper-V Launcher
 ---------------------------------------
@@ -60,7 +68,7 @@ If enabled through the Settings page, Hyper-V Launcher may detect any Virtual Ma
 
 When a new Virtual Machine is detected, a Windows notification is presented either allowing you to create a shortcut or notifying you that a shortcut was already created.
 
-When a Virtual Machine is deleted, Hyper-V Launcher automatically cleans up all its configured shortcuts.
+When automatic cleanup is enabled, Hyper-V Launcher removes associated shortcuts when a Virtual Machine is deleted. Automatic creation and cleanup require Hyper-V Launcher Service to be running.
 
 License
 -------

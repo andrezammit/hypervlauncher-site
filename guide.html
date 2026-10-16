@@ -13,7 +13,7 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hyper-V Launcher Guide — Create &amp; Manage VM Shortcuts</title>
-    <meta name="description" content="Learn how to create Hyper-V virtual machine shortcuts, launch VMs from the system tray, and configure automatic actions and shortcut detection.">
+    <meta name="description" content="Set up Hyper-V Launcher 1.0.3: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -24,15 +24,15 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://hypervlauncher.andrezammit.com/guide.html">
     <meta property="og:title" content="Hyper-V Launcher Guide — Create &amp; Manage VM Shortcuts">
-    <meta property="og:description" content="Learn how to create Hyper-V virtual machine shortcuts, launch VMs from the system tray, and configure automatic actions and shortcut detection.">
+    <meta property="og:description" content="Set up Hyper-V Launcher 1.0.3: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
     <meta property="og:image" content="https://hypervlauncher.andrezammit.com/Images/VirtualMachines.png">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1437">
-    <meta property="og:image:height" content="921">
+    <meta property="og:image:width" content="2172">
+    <meta property="og:image:height" content="1406">
     <meta property="og:image:alt" content="Hyper-V Launcher Virtual Machines page for creating shortcuts">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hyper-V Launcher Guide — Create &amp; Manage VM Shortcuts">
-    <meta name="twitter:description" content="Learn how to create Hyper-V virtual machine shortcuts, launch VMs from the system tray, and configure automatic actions and shortcut detection.">
+    <meta name="twitter:description" content="Set up Hyper-V Launcher 1.0.3: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
     <meta name="twitter:image" content="https://hypervlauncher.andrezammit.com/Images/VirtualMachines.png">
     <meta name="twitter:image:alt" content="Hyper-V Launcher Virtual Machines page for creating shortcuts">
     <script type="application/ld+json">
@@ -44,7 +44,7 @@
             "@id": "https://hypervlauncher.andrezammit.com/guide.html#webpage",
             "url": "https://hypervlauncher.andrezammit.com/guide.html",
             "name": "Hyper-V Launcher Guide — Create & Manage VM Shortcuts",
-            "description": "Learn how to create Hyper-V virtual machine shortcuts, launch VMs from the system tray, and configure automatic actions and shortcut detection.",
+            "description": "Set up Hyper-V Launcher 1.0.3: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.",
             "inLanguage": "en",
             "isPartOf": {
                 "@id": "https://hypervlauncher.andrezammit.com/#website"
@@ -77,25 +77,58 @@
 <main id="main">
     <article class="wrap guide" id="guide">
         <h1>Hyper-V Launcher guide</h1>
-        <p class="guide-intro">Create shortcuts for local Hyper-V virtual machines, launch them from the system tray, and choose what happens when you close a VM connection.</p>
+        <p class="guide-intro">Use Hyper-V Launcher 1.0.3 to manage local VMs, launch shortcuts, configure remote connections, and review activity.</p>
         <nav class="guide-contents" aria-label="On this page">
             <h2>On this page</h2>
             <ul>
+                <li><a href="#version-1-0-3">What’s new in 1.0.3</a></li>
+                <li><a href="#dashboard">Use the dashboard and VM lists</a></li>
                 <li><a href="#requirements">Requirements and installation</a></li>
                 <li><a href="#desktop-shortcuts">Create desktop and Start Menu shortcuts</a></li>
                 <li><a href="#system-tray">Launch a VM from the system tray</a></li>
                 <li><a href="#close-actions">Pause or shut down a VM when its window closes</a></li>
                 <li><a href="#remote-connections">Start a VM from a remote connection</a></li>
                 <li><a href="#automatic-shortcuts">Automatically manage VM shortcuts</a></li>
+                <li><a href="#events">Review activity and event details</a></li>
+                <li><a href="#support">Save a support archive</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
             </ul>
         </nav>
+
+        <section class="guide-section" id="version-1-0-3">
+            <h2>What’s new in 1.0.3</h2>
+            <p>This release brings a refreshed Console, a dashboard, recorded activity, and service-backed VM management.</p>
+            <ul>
+                <li><strong>Dashboard:</strong> launch configured shortcuts and running VMs, see VM state totals and active RDP proxy connections, and check Hyper-V and Launcher Monitor availability.</li>
+                <li><strong>Refreshed Console:</strong> a dark interface, collapsible navigation, list search and refresh controls, current VM states, context menus, keyboard and double-click launching, and clearer loading and empty states. Launch all selected shortcuts or VMs while preserving multiple selection in context menus.</li>
+                <li><strong>Guest OS details and icons:</strong> identify VMs by their reported operating system. Shortcuts save their icon at creation; shortcuts without saved icon metadata use a default icon. The compact tray menu and VM notifications also show VM icons.</li>
+                <li><strong>Monitor service:</strong> Console and LaunchPad can run without elevation while Monitor handles privileged VM and shortcut operations. Improved service access for standard users and per-VM power-action coordination make management more reliable.</li>
+                <li><strong>Remote connections and Events:</strong> Monitor handles starting VMs and forwarding connections to the guest, while the Events page records VM, shortcut, and connection activity with filters and details.</li>
+                <li><strong>Shortcut setup:</strong> saved creation defaults, shortcut name and port validation, clearer port guidance, and feedback when saving settings fails.</li>
+                <li><strong>Help and diagnostics:</strong> contextual guide links, a Hyper-V Manager navigation shortcut, and an About page with the app version, contact links, and support archive export. Logs now include application version information.</li>
+                <li><strong>Reliability:</strong> a responsive tray menu while settings load, preservation of existing tray entries if a refresh fails, clearer distinction between missing Hyper-V and a stopped service, less repetitive unavailable-service logging, and installer process-shutdown and packaging fixes.</li>
+            </ul>
+        </section>
+
+        <section class="guide-section" id="dashboard">
+            <h2>Use the dashboard and VM lists</h2>
+            <p>Open <strong>Dashboard</strong> for configured shortcuts, running VMs, VM state totals, active RDP proxy connections, and service availability. Launch shortcuts and connect to running VMs from this page.</p>
+            <div class="guide-row">
+                <div>
+                    <p>The <strong>Shortcuts</strong> and <strong>Virtual Machines</strong> pages show current VM states and guest OS icons. Use the search box to find a machine and the refresh control to reload the list.</p>
+                    <p>Select several rows with Ctrl or Shift, then choose <strong>Launch</strong> to launch all selected entries. Right-click a selected row to use its context menu without losing the selection. You can also double-click a row to launch it.</p>
+                    <p>Guest OS information depends on what the VM reports to Hyper-V. A shortcut keeps the icon saved when it was created; older shortcuts without saved icon metadata show the default icon.</p>
+                </div>
+                <a class="screenshot" href="Images/Dashboard.png" aria-label="View full-size Dashboard screenshot"><img src="Images/Dashboard.png" width="2172" height="1406" loading="lazy" alt="Dashboard showing VM overview, shortcuts, running VMs, connections, and service status"></a>
+            </div>
+        </section>
 
         <section class="guide-section" id="requirements">
             <h2>Requirements and installation</h2>
             <p>Hyper-V Launcher runs on Windows x64 and manages virtual machines on your local computer. You need Hyper-V enabled and a VM already created in Hyper-V Manager.</p>
             <p>For a Windows desktop host, Microsoft lists Windows 10 or Windows 11 Pro and Enterprise as editions that support Hyper-V. Windows Home does not include the Hyper-V role. Your hardware must also support virtualization. See <a href="https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/host-hardware-requirements">Microsoft’s Hyper-V requirements</a> and <a href="https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v">instructions for enabling Hyper-V</a>.</p>
             <p><a href="https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe">Download Hyper-V Launcher</a>, run the setup, then open <strong>Hyper-V Launcher Console</strong> from the Start Menu. Use Hyper-V Manager to create and configure your VMs before adding launcher shortcuts.</p>
+            <p>Setup installs <strong>Hyper-V Launcher Service</strong> (Launcher Monitor), which handles privileged VM operations, shortcut changes, automatic detection, and remote connections. Console and LaunchPad can run without elevation; keep the service running for these operations.</p>
         </section>
 
         <section class="guide-section" id="desktop-shortcuts">
@@ -111,9 +144,9 @@
                         <li>Choose what should happen when the VM connection closes, then click <strong>Save</strong>.</li>
                     </ol>
                     <p>Double-click the desktop shortcut or open it from the Start Menu. Hyper-V Launcher starts a stopped or saved VM before opening its connection window.</p>
-                    <p>You can also select a configured shortcut on the <strong>Shortcuts</strong> page and click <strong>Launch</strong>. To change its name or close action later, select it and click <strong>Edit</strong>.</p>
+                    <p>You can also select a configured shortcut on the <strong>Shortcuts</strong> page and click <strong>Launch</strong>. To change its name or close action later, select it and click <strong>Edit</strong>. New shortcuts use your saved creation defaults; the dialog checks the name and remote-connection ports before saving.</p>
                 </div>
-                <a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="1086" height="703" loading="lazy" alt="Virtual Machines page with a selected VM and the Create Shortcut control"></a>
+                <a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="2172" height="1406" loading="lazy" alt="Virtual Machines page with a selected VM and the Create Shortcut control"></a>
             </div>
         </section>
 
@@ -125,7 +158,7 @@
                     <p>If the icon is hidden, check the notification area’s hidden icons menu. Choose <strong>Open Hyper-V Launcher</strong> in the tray menu to manage your shortcuts.</p>
                     <p>In <strong>Settings</strong>, enable <strong>Start on Windows login</strong> to have the tray application start when you sign in. A VM must have a configured shortcut to appear in the tray menu.</p>
                 </div>
-                <a class="screenshot" href="Images/TrayApp.png" aria-label="View full-size system tray screenshot"><img src="Images/TrayApp.png" width="221" height="153" loading="lazy" alt="Hyper-V Launcher tray menu with virtual machine shortcuts and the Open Hyper-V Launcher option"></a>
+                <a class="screenshot" href="Images/TrayApp.png" aria-label="View full-size system tray screenshot"><img src="Images/TrayApp.png" width="440" height="422" loading="lazy" alt="Hyper-V Launcher tray menu with virtual machine shortcuts and the Open Hyper-V Launcher option"></a>
             </div>
         </section>
 
@@ -144,7 +177,7 @@
                     </dl>
                     <p>Click <strong>Save</strong>, then launch the configured shortcut to use the selected action. The action runs when that shortcut’s VM connection window closes. Opening a separate connection directly through Hyper-V Manager does not use the shortcut’s close action.</p>
                 </div>
-                <a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size shortcut settings screenshot"><img src="Images/CreateShortcut.png" width="566" height="627" loading="lazy" alt="Shortcut dialog showing the action to perform when the virtual machine connection closes"></a>
+                <a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size shortcut settings screenshot"><img src="Images/CreateShortcut.png" width="1132" height="1254" loading="lazy" alt="Shortcut dialog showing the action to perform when the virtual machine connection closes"></a>
             </div>
         </section>
 
@@ -174,12 +207,37 @@
                     </ul>
                     <p>These settings handle VM creation and deletion events. For machines you already have, create shortcuts from the <strong>Virtual Machines</strong> page. Automatic creation and cleanup depend on the installed <strong>Hyper-V Launcher Service</strong>.</p>
                 </div>
-                <a class="screenshot" href="Images/Notifications.png" aria-label="View full-size VM notification screenshot"><img src="Images/Notifications.png" width="506" height="699" loading="lazy" alt="Windows notifications offering to create a shortcut and confirming automatic shortcut creation"></a>
+                <a class="screenshot" href="Images/Settings.png" aria-label="View full-size Settings screenshot"><img src="Images/Settings.png" width="2172" height="1406" loading="lazy" alt="Settings page with automatic shortcut creation, notification, cleanup, and Windows login options"></a>
             </div>
+        </section>
+
+        <section class="guide-section" id="events">
+            <h2>Review activity and event details</h2>
+            <div class="guide-row">
+                <div>
+                    <p>Open <strong>Events</strong> to review recorded shortcut changes, VM connections, VM actions, and RDP proxy activity. Launcher Monitor owns the activity history.</p>
+                    <p>Search events and filter by activity type, outcome, and time range. Select an event to open its details. Use <strong>Refresh</strong> for recent activity or <strong>Load older events</strong> when available to see earlier entries.</p>
+                    <p>Check the recorded outcome and details when investigating a failed or unconfirmed operation.</p>
+                </div>
+                <a class="screenshot" href="Images/Events.png" aria-label="View full-size Events screenshot"><img src="Images/Events.png" width="2172" height="1406" loading="lazy" alt="Events page showing activity history, filters, outcomes, and expanded details"></a>
+            </div>
+        </section>
+
+        <section class="guide-section" id="support">
+            <h2>Save a support archive</h2>
+            <ol>
+                <li>Open <strong>About</strong> to check your installed application version and find the website, guide, and contact links.</li>
+                <li>Choose <strong>Save support archive</strong>, select a destination, and save the <code>.zip</code> file.</li>
+                <li>File Explorer selects the saved archive. Review its contents before sharing it with <a href="mailto:hypervlauncher@andrezammit.com">hypervlauncher@andrezammit.com</a>, along with the steps to reproduce the issue.</li>
+            </ol>
+            <p>The archive includes available user and shared application logs, basic system information (including app version, Windows and runtime versions, architecture, culture, and time zone), and a collection report listing any unavailable or skipped logs. Settings, activity databases, and VM files are not collected.</p>
+            <p>Logs may contain VM names, usernames, file paths, and network addresses. The archive is saved locally; it is not sent automatically. If saving fails, check the destination folder and available disk space, then try again.</p>
         </section>
 
         <section class="guide-section troubleshooting" id="troubleshooting">
             <h2>Troubleshooting Hyper-V Launcher</h2>
+            <h3>Hyper-V or Launcher Monitor is unavailable</h3>
+            <p>Check the dashboard service status. If Hyper-V is not installed, enable it on a supported Windows edition. If it is installed but stopped, check <strong>Hyper-V Virtual Machine Management</strong> in Windows Services. Also check that <strong>Hyper-V Launcher Service</strong> is running, then refresh. These are separate services.</p>
             <h3>My virtual machine is not listed</h3>
             <p>Open Hyper-V Manager and confirm the VM exists on this computer. Hyper-V Launcher lists local VMs, not those on a remote host. Confirm Hyper-V is enabled and that you can access the local VM in Hyper-V Manager, then reopen the launcher to reload the list.</p>
             <h3>The VM is listed, but there is no desktop shortcut</h3>
