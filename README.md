@@ -6,11 +6,11 @@ Hyper-V Launcher makes your local Hyper-V virtual machines easier to access. Cre
 
 [Download](https://github.com/andrezammit/hypervlauncher-site/releases/latest/download/HyperVLauncher.Setup.exe) · [Visit the website](https://hypervlauncher.andrezammit.com/) · [Read the guide](https://hypervlauncher.andrezammit.com/guide.html)
 
-Version 1.0.4 · Windows x64 · Hyper-V required
+Version 1.0.5 · Windows x64 · Hyper-V required
 
-[What’s new in 1.0.4](https://hypervlauncher.andrezammit.com/guide.html#version-1-0-4)
+[What’s new in 1.0.5](https://hypervlauncher.andrezammit.com/guide.html#version-1-0-5)
 
-Version 1.0.4 improves list loading, opens VMConnect while startup is being confirmed, refreshes missing guest OS details in the background, fixes RDP address fallback and tray menu positioning, and refines the dashboard and application icons.
+Version 1.0.5 fixes unnecessary administrator prompts when launching shortcuts, explains failed RDP connections with attempted addresses and troubleshooting guidance, and simplifies displayed product versions.
 
 ## Dashboard and VM management
 
