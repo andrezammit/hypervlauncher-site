@@ -216,6 +216,7 @@
             </ol>
             <p>The local port belongs to the host; the remote port belongs to the VM. For example, a connection to <code>my-hyperv-pc:3390</code> is forwarded to port <code>3389</code> on the guest. The guest must report an IP address to Hyper-V and be reachable from the host. If a reported guest address cannot be reached, the proxy can try another reported address. Allow the chosen host port through your firewall only for the networks and clients that need access; use a trusted network or VPN for remote access.</p>
             <p>If the connection fails while the VM starts, wait for the guest and Remote Desktop service to become ready, then reconnect. Check the host port, guest networking, guest Remote Desktop settings, and that the launcher service is running.</p>
+            <p>For connection errors and a direct connectivity check, see <a href="#rdp-connection-failed">RDP proxy cannot connect to the guest</a>.</p>
             <p>The shortcut's <a href="#close-actions">close action</a> can also run after a remote connection disconnects. The launcher waits until no other proxied connections to that VM remain, and ignores connections lasting two seconds or less. Save your guest work before disconnecting when using a shutdown action.</p>
         </section>
 
@@ -260,6 +261,15 @@
 
         <section class="guide-section troubleshooting" id="troubleshooting">
             <h2>Troubleshooting Hyper-V Launcher</h2>
+            <h3 id="rdp-connection-failed">RDP proxy cannot connect to the guest</h3>
+            <p>An error starting with <strong>Could not connect to the virtual machine on TCP port</strong> means the proxy could not connect to any of the reported guest addresses on the configured remote port. Older versions report <strong>Connected IP address is null</strong> for the same failure; this does not mean that IP discovery failed.</p>
+            <ol>
+                <li>Wait for the guest to finish starting and confirm its current IP address inside the VM. Check that the Hyper-V host can reach it over the virtual network.</li>
+                <li>Inside a Windows guest, open <strong>Settings &gt; System &gt; Remote Desktop</strong> and enable Remote Desktop. Windows Pro, Enterprise, and Education support incoming Remote Desktop connections; Windows Home does not.</li>
+                <li>Check that the guest firewall allows incoming Remote Desktop connections on the guest's listening port, usually <strong>3389</strong>. The shortcut's <strong>Remote port</strong> must match that port.</li>
+                <li>From PowerShell on the Hyper-V host, run <code>Test-NetConnection -ComputerName &lt;guest-ip&gt; -Port 3389</code>, replacing <code>&lt;guest-ip&gt;</code> with the guest's current address and changing the port if the guest uses a different one. Check that <code>TcpTestSucceeded</code> is <code>True</code> before retrying the proxy.</li>
+            </ol>
+            <p>Test the guest address and remote port directly, not the host's local proxy port. After that succeeds, reconnect your Remote Desktop client to the host and the shortcut's <strong>Local port</strong>, for example <code>my-hyperv-pc:3390</code>. See <a href="https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access">Microsoft's Remote Desktop requirements</a> for guest configuration details.</p>
             <h3>Hyper-V or Launcher Monitor is unavailable</h3>
             <p>Check the dashboard service status. If Hyper-V is not installed, enable it on a supported Windows edition. If it is installed but stopped, check <strong>Hyper-V Virtual Machine Management</strong> in Windows Services. Also check that <strong>Hyper-V Launcher Service</strong> is running, then refresh. These are separate services.</p>
             <h3>My virtual machine is not listed</h3>
