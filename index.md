@@ -7,7 +7,7 @@ Hyper-V Launcher
 
 Hyper-V Launcher is an application which makes it easier to access and manage your local Hyper-V Virtual Machines.
 
-Version **1.0.3** · [Website](https://hypervlauncher.andrezammit.com/) · [What’s new and user guide](https://hypervlauncher.andrezammit.com/guide.html#version-1-0-3)
+Version **1.0.4** · [Website](https://hypervlauncher.andrezammit.com/) · [What’s new and user guide](https://hypervlauncher.andrezammit.com/guide.html#version-1-0-4)
 
 Main Features
 -------------

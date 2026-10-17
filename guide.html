@@ -77,11 +77,12 @@
 <main id="main">
     <article class="wrap guide" id="guide">
         <h1>Hyper-V Launcher guide</h1>
-        <p class="guide-intro">Use Hyper-V Launcher 1.0.3 to manage local VMs, launch shortcuts, configure remote connections, and review activity.</p>
+        <p class="guide-intro">Use Hyper-V Launcher 1.0.4 to manage local VMs, launch shortcuts, configure remote connections, and review activity.</p>
         <nav class="guide-contents" aria-label="On this page">
             <h2>On this page</h2>
             <ul>
-                <li><a href="#version-1-0-3">What’s new in 1.0.3</a></li>
+                <li><a href="#version-1-0-4">What’s new in 1.0.4</a></li>
+                <li><a href="#version-1-0-3">Previous release: 1.0.3</a></li>
                 <li><a href="#dashboard">Use the dashboard and VM lists</a></li>
                 <li><a href="#requirements">Requirements and installation</a></li>
                 <li><a href="#desktop-shortcuts">Create desktop and Start Menu shortcuts</a></li>
@@ -94,6 +95,18 @@
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
             </ul>
         </nav>
+
+        <section class="guide-section" id="version-1-0-4">
+            <h2>What’s new in 1.0.4</h2>
+            <p>This release improves list loading, VM connection startup, and tray menu behavior.</p>
+            <ul>
+                <li><strong>More responsive lists:</strong> Dashboard sections load independently, and Dashboard, Shortcuts, and Virtual Machines use bulk VM status refreshes. Missing guest OS details for running VMs are refreshed in the background.</li>
+                <li><strong>Earlier connection window:</strong> LaunchPad opens VMConnect while VM startup confirmation is still in progress.</li>
+                <li><strong>RDP address fallback:</strong> remote connections can try another reported guest address when the first connection attempt fails.</li>
+                <li><strong>Tray menu fixes:</strong> the menu keeps the position where you clicked the tray icon, opens with corrected placement, and dismisses when you click outside it.</li>
+                <li><strong>Visual refinements:</strong> clearer dashboard spacing and VM totals, refreshed application icons, and a sharper About-page logo.</li>
+            </ul>
+        </section>
 
         <section class="guide-section" id="version-1-0-3">
             <h2>What’s new in 1.0.3</h2>
@@ -117,7 +130,7 @@
                 <div>
                     <p>The <strong>Shortcuts</strong> and <strong>Virtual Machines</strong> pages show current VM states and guest OS icons. Use the search box to find a machine and the refresh control to reload the list.</p>
                     <p>Select several rows with Ctrl or Shift, then choose <strong>Launch</strong> to launch all selected entries. Right-click a selected row to use its context menu without losing the selection. You can also double-click a row to launch it.</p>
-                    <p>Guest OS information depends on what the VM reports to Hyper-V. A shortcut keeps the icon saved when it was created; older shortcuts without saved icon metadata show the default icon.</p>
+                    <p>Guest OS information depends on what the VM reports to Hyper-V. Missing details for running VMs are refreshed in the background; refresh the list to see newly detected information. A shortcut keeps the icon saved when it was created; older shortcuts without saved icon metadata show the default icon.</p>
                 </div>
                 <a class="screenshot" href="Images/Dashboard.png" aria-label="View full-size Dashboard screenshot"><img src="Images/Dashboard.png" width="2172" height="1406" loading="lazy" alt="Dashboard showing VM overview, shortcuts, running VMs, connections, and service status"></a>
             </div>
@@ -143,7 +156,7 @@
                         <li>Select <strong>Desktop Shortcut</strong>, <strong>Start Menu Shortcut</strong>, or both.</li>
                         <li>Choose what should happen when the VM connection closes, then click <strong>Save</strong>.</li>
                     </ol>
-                    <p>Double-click the desktop shortcut or open it from the Start Menu. Hyper-V Launcher starts a stopped or saved VM before opening its connection window.</p>
+                    <p>Double-click the desktop shortcut or open it from the Start Menu. Hyper-V Launcher starts a stopped or saved VM and opens its connection window while startup is being confirmed.</p>
                     <p>You can also select a configured shortcut on the <strong>Shortcuts</strong> page and click <strong>Launch</strong>. To change its name or close action later, select it and click <strong>Edit</strong>. New shortcuts use your saved creation defaults; the dialog checks the name and remote-connection ports before saving.</p>
                 </div>
                 <a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="2172" height="1406" loading="lazy" alt="Virtual Machines page with a selected VM and the Create Shortcut control"></a>
@@ -190,7 +203,7 @@
                 <li>Set <strong>Remote port</strong> to the guest's Remote Desktop listening port, usually <strong>3389</strong>, then click <strong>Save</strong>.</li>
                 <li>Keep <strong>Hyper-V Launcher Service</strong> running. From your Remote Desktop client, connect to the host's name or IP address followed by the local port, for example <code>my-hyperv-pc:3390</code>. Sign in with the guest's credentials.</li>
             </ol>
-            <p>The local port belongs to the host; the remote port belongs to the VM. For example, a connection to <code>my-hyperv-pc:3390</code> is forwarded to port <code>3389</code> on the guest. The guest must report an IP address to Hyper-V and be reachable from the host. Allow the chosen host port through your firewall only for the networks and clients that need access; use a trusted network or VPN for remote access.</p>
+            <p>The local port belongs to the host; the remote port belongs to the VM. For example, a connection to <code>my-hyperv-pc:3390</code> is forwarded to port <code>3389</code> on the guest. The guest must report an IP address to Hyper-V and be reachable from the host. If a reported guest address cannot be reached, the proxy can try another reported address. Allow the chosen host port through your firewall only for the networks and clients that need access; use a trusted network or VPN for remote access.</p>
             <p>If the connection fails while the VM starts, wait for the guest and Remote Desktop service to become ready, then reconnect. Check the host port, guest networking, guest Remote Desktop settings, and that the launcher service is running.</p>
             <p>The shortcut's <a href="#close-actions">close action</a> can also run after a remote connection disconnects. The launcher waits until no other proxied connections to that VM remain, and ignores connections lasting two seconds or less. Save your guest work before disconnecting when using a shutdown action.</p>
         </section>
