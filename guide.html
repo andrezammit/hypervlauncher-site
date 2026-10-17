@@ -13,10 +13,10 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hyper-V Launcher Guide — Create &amp; Manage VM Shortcuts</title>
-    <meta name="description" content="Set up Hyper-V Launcher 1.0.5: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
+    <meta name="description" content="Set up Hyper-V Launcher 1.0.6: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico?v=1.0.5" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?v=1.0.6" type="image/x-icon">
     <link rel="canonical" href="https://hypervlauncher.andrezammit.com/guide.html">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta property="og:type" content="website">
@@ -24,15 +24,15 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://hypervlauncher.andrezammit.com/guide.html">
     <meta property="og:title" content="Hyper-V Launcher Guide — Create &amp; Manage VM Shortcuts">
-    <meta property="og:description" content="Set up Hyper-V Launcher 1.0.5: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
+    <meta property="og:description" content="Set up Hyper-V Launcher 1.0.6: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
     <meta property="og:image" content="https://hypervlauncher.andrezammit.com/Images/VirtualMachines.png">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="2174">
-    <meta property="og:image:height" content="1410">
+    <meta property="og:image:width" content="2172">
+    <meta property="og:image:height" content="1406">
     <meta property="og:image:alt" content="Hyper-V Launcher Virtual Machines page for creating shortcuts">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hyper-V Launcher Guide — Create &amp; Manage VM Shortcuts">
-    <meta name="twitter:description" content="Set up Hyper-V Launcher 1.0.5: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
+    <meta name="twitter:description" content="Set up Hyper-V Launcher 1.0.6: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.">
     <meta name="twitter:image" content="https://hypervlauncher.andrezammit.com/Images/VirtualMachines.png">
     <meta name="twitter:image:alt" content="Hyper-V Launcher Virtual Machines page for creating shortcuts">
     <script type="application/ld+json">
@@ -44,7 +44,7 @@
             "@id": "https://hypervlauncher.andrezammit.com/guide.html#webpage",
             "url": "https://hypervlauncher.andrezammit.com/guide.html",
             "name": "Hyper-V Launcher Guide — Create & Manage VM Shortcuts",
-            "description": "Set up Hyper-V Launcher 1.0.5: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.",
+            "description": "Set up Hyper-V Launcher 1.0.6: dashboard, VM shortcuts, remote connections, activity history, automatic actions, and support archives.",
             "inLanguage": "en",
             "isPartOf": {
                 "@id": "https://hypervlauncher.andrezammit.com/#website"
@@ -66,7 +66,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
         <div class="wrap header-inner">
-            <a class="brand" href="index.html"><img class="brand-logo" src="Images/Logo.png?v=1.0.5" width="64" height="64" alt="">Hyper-V Launcher</a>
+            <a class="brand" href="index.html"><img class="brand-logo" src="Images/Logo.png?v=1.0.6" width="64" height="64" alt="">Hyper-V Launcher</a>
             <nav aria-label="Main navigation">
                 <a href="index.html#features">Features</a>
                 <a href="guide.html">Guide</a>
@@ -77,11 +77,12 @@
 <main id="main">
     <article class="wrap guide" id="guide">
         <h1>Hyper-V Launcher guide</h1>
-        <p class="guide-intro">Use Hyper-V Launcher 1.0.5 to manage local VMs, launch shortcuts, configure remote connections, and review activity.</p>
+        <p class="guide-intro">Use Hyper-V Launcher 1.0.6 to manage local VMs, launch shortcuts, configure remote connections, and review activity.</p>
         <nav class="guide-contents" aria-label="On this page">
             <h2>On this page</h2>
             <ul>
-                <li><a href="#version-1-0-5">What’s new in 1.0.5</a></li>
+                <li><a href="#version-1-0-6">What’s new in 1.0.6</a></li>
+                <li><a href="#version-1-0-5">Previous release: 1.0.5</a></li>
                 <li><a href="#version-1-0-4">Previous release: 1.0.4</a></li>
                 <li><a href="#version-1-0-3">Previous release: 1.0.3</a></li>
                 <li><a href="#dashboard">Use the dashboard and VM lists</a></li>
@@ -96,6 +97,17 @@
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
             </ul>
         </nav>
+
+        <section class="guide-section" id="version-1-0-6">
+            <h2>What’s new in 1.0.6</h2>
+            <p>This release makes creating your first shortcut easier and refines the dashboard and Events page.</p>
+            <ul>
+                <li><strong>Your first shortcut:</strong> create a shortcut directly from the empty dashboard. Choose a VM, use Back to change your selection, and see confirmation when the shortcut is ready. A single VM skips the picker.</li>
+                <li><strong>Getting started:</strong> when no VMs are found, the dashboard explains how to add one and offers to open Hyper-V Manager.</li>
+                <li><strong>Simpler shortcut settings:</strong> remote connection options sit in a collapsible section. Existing remote triggers and invalid port fields expand the section when needed.</li>
+                <li><strong>Visual refinements:</strong> larger guest OS icons and lighter shortcut labels on the dashboard, with more room for Events search and clearer outcome spacing and alignment.</li>
+            </ul>
+        </section>
 
         <section class="guide-section" id="version-1-0-5">
             <h2>What’s new in 1.0.5</h2>
@@ -143,7 +155,7 @@
                     <p>Select several rows with Ctrl or Shift, then choose <strong>Launch</strong> to launch all selected entries. Right-click a selected row to use its context menu without losing the selection. You can also double-click a row to launch it.</p>
                     <p>Guest OS information depends on what the VM reports to Hyper-V. Missing details for running VMs are refreshed in the background; refresh the list to see newly detected information. A shortcut keeps the icon saved when it was created; older shortcuts without saved icon metadata show the default icon.</p>
                 </div>
-                <a class="screenshot" href="Images/Dashboard.png" aria-label="View full-size Dashboard screenshot"><img src="Images/Dashboard.png" width="2174" height="1410" loading="lazy" alt="Dashboard showing VM overview, shortcuts, running VMs, connections, and service status"></a>
+                <a class="screenshot" href="Images/Dashboard.png" aria-label="View full-size Dashboard screenshot"><img src="Images/Dashboard.png" width="2172" height="1406" loading="lazy" alt="Dashboard showing VM overview, shortcuts, running VMs, connections, and service status"></a>
             </div>
         </section>
 
@@ -158,6 +170,7 @@
         <section class="guide-section" id="desktop-shortcuts">
             <h2>Create a desktop shortcut for a Hyper-V virtual machine</h2>
             <p>A shortcut opens a local VM without navigating through Hyper-V Manager each time. You can place it on your desktop, in the Start Menu, or both.</p>
+            <p>For your first shortcut, choose <strong>Create your first shortcut</strong> on the dashboard. If you have several VMs, select one and choose <strong>Continue</strong>; use <strong>Back</strong> to change your choice. With one VM, the shortcut dialog opens directly. If no VMs exist, choose <strong>Open Hyper-V Manager</strong>, create a VM, then refresh the dashboard.</p>
             <div class="guide-row">
                 <div>
                     <ol>
@@ -165,12 +178,12 @@
                         <li>Select the VM you want to use and click <strong>Create Shortcut</strong>.</li>
                         <li>Enter a shortcut name that you will recognize.</li>
                         <li>Select <strong>Desktop Shortcut</strong>, <strong>Start Menu Shortcut</strong>, or both.</li>
-                        <li>Choose what should happen when the VM connection closes, then click <strong>Save</strong>.</li>
+                        <li>Choose what should happen when the VM connection closes, then click <strong>Create shortcut</strong>.</li>
                     </ol>
                     <p>Double-click the desktop shortcut or open it from the Start Menu. Hyper-V Launcher starts a stopped or saved VM and opens its connection window while startup is being confirmed.</p>
                     <p>You can also select a configured shortcut on the <strong>Shortcuts</strong> page and click <strong>Launch</strong>. To change its name or close action later, select it and click <strong>Edit</strong>. New shortcuts use your saved creation defaults; the dialog checks the name and remote-connection ports before saving.</p>
                 </div>
-                <a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="2174" height="1410" loading="lazy" alt="Virtual Machines page with a selected VM and the Create Shortcut control"></a>
+                <a class="screenshot" href="Images/VirtualMachines.png" aria-label="View full-size Virtual Machines screenshot"><img src="Images/VirtualMachines.png" width="2172" height="1406" loading="lazy" alt="Virtual Machines page with a selected VM and the Create Shortcut control"></a>
             </div>
         </section>
 
@@ -199,19 +212,19 @@
                         <dt>Shutdown the Virtual Machine</dt>
                         <dd>Requests a guest shutdown. The implementation can fall back to turning off the VM when a particular shutdown failure occurs, so save your work inside the guest before closing the connection.</dd>
                     </dl>
-                    <p>Click <strong>Save</strong>, then launch the configured shortcut to use the selected action. The action runs when that shortcut’s VM connection window closes. Opening a separate connection directly through Hyper-V Manager does not use the shortcut’s close action.</p>
+                    <p>Click <strong>Create shortcut</strong> (or <strong>Save</strong> when editing), then launch the configured shortcut to use the selected action. The action runs when that shortcut’s VM connection window closes. Opening a separate connection directly through Hyper-V Manager does not use the shortcut’s close action.</p>
                 </div>
-                <a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size shortcut settings screenshot"><img src="Images/CreateShortcut.png" width="1134" height="1254" loading="lazy" alt="Shortcut dialog showing the action to perform when the virtual machine connection closes"></a>
+                <a class="screenshot" href="Images/CreateShortcut.png" aria-label="View full-size shortcut settings screenshot"><img src="Images/CreateShortcut.png" width="1132" height="1092" loading="lazy" alt="Shortcut dialog showing the action to perform when the virtual machine connection closes"></a>
             </div>
         </section>
 
         <section class="guide-section" id="remote-connections">
             <h2>Start a VM from a remote connection</h2>
-            <p>Enable <strong>Start shortcut from remote connection</strong> when creating or editing a shortcut. Hyper-V Launcher listens on a port on the Hyper-V host. An incoming connection starts the VM and forwards traffic to the destination port inside the guest.</p>
+            <p>Expand <strong>Remote connection settings</strong>, then enable <strong>Start shortcut from remote connection</strong> when creating or editing a shortcut. Hyper-V Launcher listens on a port on the Hyper-V host. An incoming connection starts the VM and forwards traffic to the destination port inside the guest.</p>
             <ol>
                 <li>Enable Remote Desktop inside a guest operating system that supports hosting Remote Desktop connections. Make sure it accepts connections and that the Hyper-V host can reach the guest over its virtual network.</li>
                 <li>Choose an unused <strong>Local port</strong> on the Hyper-V host, for example <strong>3390</strong>. Use a different local port for each shortcut with remote connections enabled; avoid ports already used by other services.</li>
-                <li>Set <strong>Remote port</strong> to the guest's Remote Desktop listening port, usually <strong>3389</strong>, then click <strong>Save</strong>.</li>
+                <li>Set <strong>Remote port</strong> to the guest's Remote Desktop listening port, usually <strong>3389</strong>, then click <strong>Create shortcut</strong> (or <strong>Save</strong> when editing).</li>
                 <li>Keep <strong>Hyper-V Launcher Service</strong> running. From your Remote Desktop client, connect to the host's name or IP address followed by the local port, for example <code>my-hyperv-pc:3390</code>. Sign in with the guest's credentials.</li>
             </ol>
             <p>The local port belongs to the host; the remote port belongs to the VM. For example, a connection to <code>my-hyperv-pc:3390</code> is forwarded to port <code>3389</code> on the guest. The guest must report an IP address to Hyper-V and be reachable from the host. If a reported guest address cannot be reached, the proxy can try another reported address. Allow the chosen host port through your firewall only for the networks and clients that need access; use a trusted network or VPN for remote access.</p>
@@ -232,7 +245,7 @@
                     </ul>
                     <p>These settings handle VM creation and deletion events. For machines you already have, create shortcuts from the <strong>Virtual Machines</strong> page. Automatic creation and cleanup depend on the installed <strong>Hyper-V Launcher Service</strong>.</p>
                 </div>
-                <a class="screenshot" href="Images/Settings.png" aria-label="View full-size Settings screenshot"><img src="Images/Settings.png" width="2174" height="1410" loading="lazy" alt="Settings page with automatic shortcut creation, notification, cleanup, and Windows login options"></a>
+                <a class="screenshot" href="Images/Settings.png" aria-label="View full-size Settings screenshot"><img src="Images/Settings.png" width="2172" height="1406" loading="lazy" alt="Settings page with automatic shortcut creation, notification, cleanup, and Windows login options"></a>
             </div>
         </section>
 
@@ -244,7 +257,7 @@
                     <p>Search events and filter by activity type, outcome, and time range. Select an event to open its details. Use <strong>Refresh</strong> for recent activity or <strong>Load older events</strong> when available to see earlier entries.</p>
                     <p>Check the recorded outcome and details when investigating a failed or unconfirmed operation.</p>
                 </div>
-                <a class="screenshot" href="Images/Events.png" aria-label="View full-size Events screenshot"><img src="Images/Events.png" width="2174" height="1410" loading="lazy" alt="Events page showing activity history, filters, and recorded outcomes"></a>
+                <a class="screenshot" href="Images/Events.png" aria-label="View full-size Events screenshot"><img src="Images/Events.png" width="2172" height="1406" loading="lazy" alt="Events page showing activity history, filters, and recorded outcomes"></a>
             </div>
         </section>
 
@@ -275,7 +288,7 @@
             <h3>My virtual machine is not listed</h3>
             <p>Open Hyper-V Manager and confirm the VM exists on this computer. Hyper-V Launcher lists local VMs, not those on a remote host. Confirm Hyper-V is enabled and that you can access the local VM in Hyper-V Manager, then reopen the launcher to reload the list.</p>
             <h3>The VM is listed, but there is no desktop shortcut</h3>
-            <p>A VM in the <strong>Virtual Machines</strong> list is not necessarily a configured shortcut. Select it, choose <strong>Create Shortcut</strong>, select <strong>Desktop Shortcut</strong>, and save. Automatic creation applies to newly detected VMs; it does not create desktop shortcuts for every existing machine when enabled.</p>
+            <p>A VM in the <strong>Virtual Machines</strong> list is not necessarily a configured shortcut. Select it, choose <strong>Create Shortcut</strong>, select <strong>Desktop Shortcut</strong>, and click <strong>Create shortcut</strong>. Automatic creation applies to newly detected VMs; it does not create desktop shortcuts for every existing machine when enabled.</p>
             <h3>The tray icon or a tray shortcut is missing</h3>
             <p>Check the hidden icons menu and confirm the tray application is running. If you closed it, you can start <strong>HyperVLauncher.Apps.Tray.exe</strong> from your Hyper-V Launcher installation folder. Enable <strong>Start on Windows login</strong> for future sign-ins. If only a VM entry is missing, check that it has a shortcut on the <strong>Shortcuts</strong> page.</p>
             <h3>The close action did not run</h3>
@@ -286,7 +299,7 @@
     </article>
 </main>
     <footer class="wrap site-footer">
-        <a class="brand" href="index.html"><img class="brand-logo" src="Images/Logo.png?v=1.0.5" width="64" height="64" alt="">Hyper-V Launcher</a>
+        <a class="brand" href="index.html"><img class="brand-logo" src="Images/Logo.png?v=1.0.6" width="64" height="64" alt="">Hyper-V Launcher</a>
         <p>By <a href="https://andrezammit.com">André Zammit</a></p>
     </footer>
 </body>

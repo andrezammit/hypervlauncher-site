@@ -7,7 +7,7 @@ Hyper-V Launcher
 
 Hyper-V Launcher is an application which makes it easier to access and manage your local Hyper-V Virtual Machines.
 
-Version **1.0.5** · [Website](https://hypervlauncher.andrezammit.com/) · [What’s new and user guide](https://hypervlauncher.andrezammit.com/guide.html#version-1-0-5)
+Version **1.0.6** · [Website](https://hypervlauncher.andrezammit.com/) · [What’s new and user guide](https://hypervlauncher.andrezammit.com/guide.html#version-1-0-6)
 
 Main Features
 -------------
@@ -43,7 +43,9 @@ Hyper-V Launcher is configured through its main application which can be started
 
 ![Virtual Machines Page](Images/VirtualMachines.png)
 
-The Virtual Machines page shows all available Hyper-V Virtual Machines available on the system. Select one and click on "Create Shortcut".
+To create your first shortcut, choose **Create your first shortcut** on the dashboard. Select a VM if prompted, then choose a name, destinations, and close action and click **Create shortcut**. If no VMs exist, open Hyper-V Manager from the dashboard and create one first.
+
+The Virtual Machines page shows all available local Hyper-V virtual machines. Select one and click on "Create Shortcut".
 
 ![Virtual Machines Page](Images/CreateShortcut.png)
 
